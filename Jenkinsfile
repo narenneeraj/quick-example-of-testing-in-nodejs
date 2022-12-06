@@ -24,11 +24,10 @@ agent any
     }
     stage('SonarQube'){
       steps{
-      sh ' sonar-scanner \
-  -Dsonar.projectKey=test-app \
-  -Dsonar.sources=. \
-  -Dsonar.host.url=http://3.27.24.166:9000 \
-  -Dsonar.login=sqp_f6306f75f2429c9873fd9763c636d2e7a7511266 '
+      sh ' withSonarQubeEnv('test-server', envOnly: true) {
+  // This expands the evironment variables SONAR_CONFIG_NAME, SONAR_HOST_URL, SONAR_AUTH_TOKEN that can be used by any script.
+  println ${env.SONAR_HOST_URL} 
+} '
       }
     }
 
