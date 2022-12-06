@@ -5,7 +5,7 @@ agent any
     stage('Build Image'){
       steps {
       sh '''
-         npm install
+         sudo npm install
          sudo docker build -t node-hello .
          '''
       }
