@@ -24,13 +24,14 @@ agent any
     }
     stage('Sonar-project'){
       steps{
-        sh '
+        sh '''
         sonar-scanner \
         -Dsonar.projectKey=sonar-project \
         -Dsonar.sources=. \
         -Dsonar.host.url=http://54.252.215.169:9000 \
         -Dsonar.login=sqp_0e561494357f1e517447217e966b3557ca7c1075
-      }
+        '''
+      }  
     }
     stage('SonarQube'){
       steps{
