@@ -24,7 +24,7 @@ agent any
     }
     stage('SonarQube'){
       steps{
-      sh ' mvn sonar:sonar \
+      sh ' sonar:sonar \
   -Dsonar.projectKey=test-app \
   -Dsonar.sources=. \
   -Dsonar.host.url=http://3.27.24.166:9000 \
