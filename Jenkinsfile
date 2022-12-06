@@ -16,7 +16,11 @@ agent any
     }  
     
     }
-    
+    stage('Test'){
+      steps {
+      sh 'npm run cover'
+      }
+    }
 
         stage('Deploy Container'){
       steps {
