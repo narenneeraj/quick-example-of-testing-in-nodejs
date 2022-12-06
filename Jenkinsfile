@@ -18,7 +18,7 @@ agent any
     }
     stage('Test'){
       steps {
-      sh 'npm run cover'
+      sh 'npm run test'
       }
     }
 
